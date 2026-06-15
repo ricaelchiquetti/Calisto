@@ -64,9 +64,19 @@ export default function Pericias({ pericias, disponiveis, limiteMax, onChange, o
           )}
         </div>
 
+        <div className="pericia-cols-header">
+          <span />
+          <span />
+          <span>Pts</span>
+          <span>Bônus</span>
+          <span>Total</span>
+        </div>
+
         {pericias.map((p, i) => {
           const anterior = pericias[i - 1]
           const novoGrupo = p.grupo && (!anterior || anterior.grupo !== p.grupo)
+          const bonus = p.bonus ?? 0
+          const total = (p.valor || 0) + bonus
 
           return (
             <div key={p.id}>
@@ -102,6 +112,20 @@ export default function Pericias({ pericias, disponiveis, limiteMax, onChange, o
                   max={limiteMax}
                   onChange={v => onChange(i, 'valor', v)}
                 />
+
+                <input
+                  type="number"
+                  className="pericia-bonus-input"
+                  value={bonus}
+                  onChange={e => onChange(i, 'bonus', parseInt(e.target.value, 10) || 0)}
+                />
+
+                <span
+                  className="pericia-total"
+                  style={{ color: total > 0 ? 'var(--green)' : 'var(--text-muted)' }}
+                >
+                  {total}
+                </span>
 
                 {p.custom && (
                   <button className="pericia-remove" onClick={() => onRemove(i)} title="Remover">✕</button>
