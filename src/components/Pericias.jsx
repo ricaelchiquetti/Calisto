@@ -53,7 +53,7 @@ export default function Pericias({ pericias, disponiveis, limiteMax, onChange, o
       <Section
         title="Perícias"
         icon="🎯"
-        badge={`${disponiveis} livre${disponiveis !== 1 ? 's' : ''}`}
+        badge={`${disponiveis} PTS livre${disponiveis !== 1 ? 's' : ''}`}
         badgeVariant={badgeVariant}
         defaultOpen
       >
@@ -136,13 +136,6 @@ export default function Pericias({ pericias, disponiveis, limiteMax, onChange, o
         })}
 
         <button className="btn-add" onClick={() => setShowAdd(true)}>+ Nova perícia</button>
-
-        <div className="pontos-info">
-          Pts usados: <span>{pericias.reduce((s, p) => s + p.valor, 0)}</span> / 12
-          {disponiveis < 0 && (
-            <span style={{ color: 'var(--red)', marginLeft: 6 }}>({Math.abs(disponiveis)} acima — use XP)</span>
-          )}
-        </div>
       </Section>
 
       {showAdd && <AddPericia onAdd={onAdd} onClose={() => setShowAdd(false)} />}
