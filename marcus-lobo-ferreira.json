@@ -1,0 +1,69 @@
+{
+  "identificacao": {
+    "nome": "Marcus \"Lobo\" Ferreira",
+    "ocupacao": "Ex-Instrutor Militar de Sobrevivência em Selva",
+    "descricao": "42 anos, cabelo curto grisalho, cicatrizes no rosto e nos braços. Olhar calmo e calculista. Raramente fala sem necessidade.",
+    "historico": "Passou 20 anos ensinando militares a sobreviver em selvas e ambientes hostis. Quando o apocalipse chegou, estava conduzindo um treinamento numa base remota da Amazônia com oito recrutas. Conseguiu trazer dois deles com vida. Desde então caminha sozinho — não por egoísmo, mas porque sabe que grupos barulhentos morrem primeiro."
+  },
+  "atributos": {
+    "fisico": 4,
+    "mente": 2
+  },
+  "recursos": {
+    "vida": { "atual": 14, "maximo": 14 },
+    "sorte": { "atual": 6, "maximo": 6 }
+  },
+  "pericias": [
+    { "id": 1,  "nome": "Acrobacia",      "descricao": "Equilibrar, saltar e fazer movimentos precisos com o corpo", "valor": 0, "especialidade": false, "custom": false, "grupo": "base" },
+    { "id": 2,  "nome": "Aparência",      "descricao": "Seduzir e causar boa impressão",                             "valor": 0, "especialidade": false, "custom": false, "grupo": "base" },
+    { "id": 3,  "nome": "Combate",        "descricao": "Ataques — escolha o tipo",                                   "valor": 0, "especialidade": false, "custom": false, "grupo": "base", "nota": "" },
+    { "id": 4,  "nome": "Condução",       "descricao": "Conduzir montarias ou veículos",                             "valor": 0, "especialidade": false, "custom": false, "grupo": "base", "nota": "" },
+    { "id": 5,  "nome": "Conhecimento",   "descricao": "Saber tudo sobre uma área específica",                       "valor": 0, "especialidade": false, "custom": false, "grupo": "base", "nota": "" },
+    { "id": 6,  "nome": "Coragem",        "descricao": "Resistir ao medo",                                           "valor": 0, "especialidade": false, "custom": false, "grupo": "base" },
+    { "id": 7,  "nome": "Crime",          "descricao": "Abrir fechaduras, furtar bolsos, mover-se em silêncio",      "valor": 0, "especialidade": false, "custom": false, "grupo": "base" },
+    { "id": 8,  "nome": "Força",          "descricao": "Erguer coisas pesadas, quebrar coisas e derrubar portas",    "valor": 0, "especialidade": false, "custom": false, "grupo": "base" },
+    { "id": 9,  "nome": "Lábia",          "descricao": "Manipular e convencer outras pessoas",                       "valor": 0, "especialidade": false, "custom": false, "grupo": "base" },
+    { "id": 10, "nome": "Percepção",      "descricao": "Perceber detalhes, sons e cheiros",                          "valor": 2, "especialidade": false, "custom": false, "grupo": "base" },
+    { "id": 11, "nome": "Vigor",          "descricao": "Resistir à fadiga, cansaço, fome e calor intenso",           "valor": 0, "especialidade": false, "custom": false, "grupo": "base" },
+    { "id": 12, "nome": "Combate Físico", "descricao": "Ataques corpo a corpo sem arma",                             "valor": 0, "especialidade": false, "custom": false, "grupo": "c+" },
+    { "id": 13, "nome": "Mira",           "descricao": "Ataques de combate a distância",                             "valor": 4, "especialidade": true,  "custom": false, "grupo": "c+" },
+    { "id": 14, "nome": "Pilotagem",      "descricao": "Para cada veículo escolhido",                                "valor": 0, "especialidade": false, "custom": false, "grupo": "c+", "nota": "" },
+    { "id": 15, "nome": "Computadores",   "descricao": "Manuseio de computadores e sistemas digitais",               "valor": 0, "especialidade": false, "custom": false, "grupo": "c+" },
+    { "id": 16, "nome": "Esportes",       "descricao": "Escalar, nadar, correr, resistência física",                 "valor": 0, "especialidade": false, "custom": false, "grupo": "c+" },
+    { "id": 17, "nome": "Furtividade",    "descricao": "Mover-se e agir silenciosamente",                            "valor": 1, "especialidade": false, "custom": false, "grupo": "c+", "nota": "" },
+    { "id": 18, "nome": "Persuasão",      "descricao": "Manipular, convencer, seduzir, negociar",                    "valor": 0, "especialidade": false, "custom": false, "grupo": "c+" },
+    { "id": 19, "nome": "Reparos",        "descricao": "Reparo de um grupo de dispositivos escolhidos",              "valor": 0, "especialidade": false, "custom": false, "grupo": "c+", "nota": "" },
+    { "id": 20, "nome": "Sobrevivência",  "descricao": "Conhecimento para sobreviver ao Apocalipse Zumbi",           "valor": 3, "especialidade": true,  "custom": false, "grupo": "c+" }
+  ],
+  "caracteristicas": [
+    { "id": 1, "nome": "Especialista",        "custo": 2, "bonus": "+1 nas rolagens de 3 perícias escolhidas",           "ativo": true,  "custom": false, "detalhe": "Mira, Sobrevivência, Furtividade" },
+    { "id": 2, "nome": "Ambidestro",          "custo": 3, "bonus": "Pode usar as duas mãos para atacar ou realizar ações","ativo": false, "custom": false, "detalhe": "" },
+    { "id": 3, "nome": "Reflexo de Combate",  "custo": 4, "bonus": "Sempre começa primeiro no combate",                  "ativo": false, "custom": false, "detalhe": "" },
+    { "id": 4, "nome": "Determinação",        "custo": 4, "bonus": "+1 nas rolagens do atributo Mente ou Físico",        "ativo": false, "custom": false, "detalhe": "" },
+    { "id": 5, "nome": "Recuperação",         "custo": 4, "bonus": "Recupera 2 pontos de Vida e Sorte por hora de descanso", "ativo": false, "custom": false, "detalhe": "" },
+    { "id": 6, "nome": "Limite Sobre-humano", "custo": 4, "bonus": "Perícias podem ultrapassar o limite, indo até 8",    "ativo": false, "custom": false, "detalhe": "" }
+  ],
+  "armas": [
+    {
+      "id": 1001,
+      "nome": "Rifle de Caça Remington",
+      "tipo": "Fogo Médio",
+      "bonusAtaque": 3,
+      "bonusDano": 4,
+      "notas": "Escopo 4x. Alcance efetivo ~150m. 12 balas restantes."
+    },
+    {
+      "id": 1002,
+      "nome": "Faca de Combate Militar",
+      "tipo": "Lâmina Pequena",
+      "bonusAtaque": 1,
+      "bonusDano": 3,
+      "notas": "Haste de aço inox. Pode ser usada para improvisação e sobrevivência."
+    }
+  ],
+  "experiencia": {
+    "total": 0,
+    "gasto": 0
+  },
+  "notas": "Especialidade: Mira + Sobrevivência (ligação direta: atirador/rastreador).\nEspecialista (+1 em Mira, Sobrevivência e Furtividade) — custo: 2 pts de perícia.\nPontos de perícia usados: 10 / 10 (12 - 2 do Especialista).\n\nDistribuição livre (regra TWD C+, máx 6 por perícia):\n  Mira 4 + Sobrevivência 3 + Percepção 2 + Furtividade 1 = 10 pts\n\nCom Especialista (+1 em Mira, Sobrevivência, Furtividade) efetivo:\n  Mira 5 | Sobrevivência 4 | Percepção 2 | Furtividade 2"
+}
