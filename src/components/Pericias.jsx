@@ -10,7 +10,7 @@ function AddPericia({ onAdd, onClose }) {
 
   const handleAdd = () => {
     if (!nome.trim()) return
-    onAdd({ id: Date.now(), nome: nome.trim(), descricao: descricao.trim(), valor: 0, especialidade: false, custom: true })
+    onAdd({ id: Date.now(), nome: nome.trim(), descricao: descricao.trim(), valor: 0, bonus: 0, especialidade: false, custom: true })
     onClose()
   }
 
