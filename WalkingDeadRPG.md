@@ -82,7 +82,7 @@ Distribua **12 pontos** entre as perícias que quiser (máximo 6 em cada).
 Aconselhável escolher pelo menos 4 perícias — por exemplo, com pontuação 4, 3, 2 e 1.
 
 > **Limite de Perícia (regra opcional):** Uma perícia só pode ter um valor alto se houver outra perícia com um valor 1 ponto abaixo.  
-> *Exemplo: Você só pode ter Combate Físico 3 se tiver outra perícia com valor 2, que por sua vez só pode existir se houver uma perícia com valor 1.*
+> *Exemplo: Você só pode ter Mira 3 se tiver outra perícia com valor 2, que por sua vez só pode existir se houver uma perícia com valor 1.*
 
 ### Etapa 4 — Especialidades
 
@@ -193,7 +193,7 @@ A Sorte é usada para **melhorar testes** de Atributo ou Perícia — antes de r
 - O limite de pontos gastos por rolagem é igual ao **valor do atributo ou perícia testada**.
 - Sorte é recuperada normalmente com descanso (1 por hora).
 
-> *Exemplo: Você tem Combate Físico 3 e quer gastar Sorte. Pode gastar no máximo 3 pontos de Sorte nessa rolagem.*
+> *Exemplo: Você tem Mira 3 e quer gastar Sorte. Pode gastar no máximo 3 pontos de Sorte nessa rolagem.*
 
 ---
 
@@ -241,15 +241,15 @@ As perícias possíveis podem variar a critério do Mestre. Seja criativo e crie
 
 | Perícia | O que cobre |
 |---|---|
-| **Combate Físico** | Ataques corpo a corpo sem arma |
 | **Mira** | Ataques de combate a distância |
-| **Pilotagem (\_)** | Para cada veículo escolhido |
 | **Computadores** | Manuseio de computadores e sistemas digitais |
 | **Esportes** | Escalar, nadar, correr, resistência física |
 | **Furtividade** | Mover-se e agir silenciosamente |
 | **Persuasão** | Manipular, convencer, seduzir, negociar |
 | **Reparos (\_)** | Reparo de um grupo de dispositivos escolhidos |
 | **Sobrevivência** | Conhecimento para sobreviver ao Apocalipse Zumbi |
+
+> **Nota:** Combate corpo a corpo (armado ou desarmado) usa a perícia base **Combate (\_)**. Veículos terrestres, aéreos e aquáticos usam **Condução (\_)** — basta especificar o tipo na nota.
 
 ---
 
@@ -357,7 +357,7 @@ Em um apocalipse zumbi, o perigo não vem só dos mortos. Saqueadores, gente des
 
 | Físico | Sorte | Perícias |
 |---|---|---|
-| 1 | 0 | Percepção 3, Furtividade 3, Combate Físico 2 |
+| 1 | 0 | Percepção 3, Furtividade 3, Combate 2 |
 
 **Bandos** — *Zumbis "comuns". Facilmente eliminados com uma pancada na cabeça — a dificuldade está no ataque em grupo.*
 
