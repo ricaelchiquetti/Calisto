@@ -22,6 +22,7 @@ function loadCharacter() {
 
 export default function App() {
   const [char, setChar] = useState(loadCharacter)
+  const [locked, setLocked] = useState(false)
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(char))
@@ -68,6 +69,8 @@ export default function App() {
       {/* ── HEADER ── */}
       <Header
         nome={char.identificacao.nome}
+        locked={locked}
+        onToggleLock={() => setLocked(l => !l)}
         onExport={exportJSON}
         onImport={importJSON}
         onReset={resetChar}
@@ -80,6 +83,7 @@ export default function App() {
         onAtributoChange={(field, val) => set(c => { c.atributos[field] = val })}
         onVidaChange={(field, val) => set(c => { c.recursos.vida[field] = val })}
         onSorteChange={(field, val) => set(c => { c.recursos.sorte[field] = val })}
+        locked={locked}
       />
 
       {/* ── IDENTIFICAÇÃO ── */}
@@ -103,6 +107,7 @@ export default function App() {
             onChange={(index, field, val) => set(c => { c.pericias[index][field] = val })}
             onAdd={(pericia) => set(c => { c.pericias.push(pericia) })}
             onRemove={(index) => set(c => { c.pericias.splice(index, 1) })}
+            locked={locked}
           />
         </div>
 
@@ -112,6 +117,7 @@ export default function App() {
             onChange={(index, field, val) => set(c => { c.caracteristicas[index][field] = val })}
             onAdd={(caract) => set(c => { c.caracteristicas.push(caract) })}
             onRemove={(index) => set(c => { c.caracteristicas.splice(index, 1) })}
+            locked={locked}
           />
         </div>
       </div>
@@ -121,6 +127,7 @@ export default function App() {
         armas={char.armas}
         onAdd={(arma) => set(c => { c.armas.push(arma) })}
         onRemove={(index) => set(c => { c.armas.splice(index, 1) })}
+        locked={locked}
       />
 
       <Notas

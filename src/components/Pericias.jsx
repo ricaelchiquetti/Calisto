@@ -36,13 +36,14 @@ function AddPericia({ onAdd, onClose }) {
   )
 }
 
-export default function Pericias({ pericias, disponiveis, limiteMax, onChange, onAdd, onRemove }) {
+export default function Pericias({ pericias, disponiveis, limiteMax, onChange, onAdd, onRemove, locked }) {
   const [showAdd, setShowAdd] = useState(false)
 
   const especialidades = pericias.filter(p => p.especialidade)
   const badgeVariant = disponiveis < 0 ? 'warn' : disponiveis === 0 ? 'ok' : undefined
 
   const toggleEspecialidade = (index) => {
+    if (locked) return
     const current = pericias[index].especialidade
     if (!current && especialidades.length >= MAX_ESPECIALIDADES) return
     onChange(index, 'especialidade', !current)
@@ -111,6 +112,7 @@ export default function Pericias({ pericias, disponiveis, limiteMax, onChange, o
                   value={p.valor}
                   max={limiteMax}
                   onChange={v => onChange(i, 'valor', v)}
+                  disabled={locked}
                 />
 
                 <input
@@ -118,6 +120,7 @@ export default function Pericias({ pericias, disponiveis, limiteMax, onChange, o
                   className="pericia-bonus-input"
                   value={bonus}
                   onChange={e => onChange(i, 'bonus', parseInt(e.target.value, 10) || 0)}
+                  disabled={locked}
                 />
 
                 <span
@@ -127,7 +130,7 @@ export default function Pericias({ pericias, disponiveis, limiteMax, onChange, o
                   {total}
                 </span>
 
-                {p.custom && (
+                {p.custom && !locked && (
                   <button className="pericia-remove" onClick={() => onRemove(i)} title="Remover">✕</button>
                 )}
               </div>
@@ -135,7 +138,7 @@ export default function Pericias({ pericias, disponiveis, limiteMax, onChange, o
           )
         })}
 
-        <button className="btn-add" onClick={() => setShowAdd(true)}>+ Nova perícia</button>
+        {!locked && <button className="btn-add" onClick={() => setShowAdd(true)}>+ Nova perícia</button>}
       </Section>
 
       {showAdd && <AddPericia onAdd={onAdd} onClose={() => setShowAdd(false)} />}

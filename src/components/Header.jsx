@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 
-export default function Header({ nome, onExport, onImport, onReset }) {
+export default function Header({ nome, locked, onToggleLock, onExport, onImport, onReset }) {
   const fileRef = useRef(null)
 
   return (
@@ -20,6 +20,13 @@ export default function Header({ nome, onExport, onImport, onReset }) {
           style={{ display: 'none' }}
           onChange={e => { if (e.target.files[0]) onImport(e.target.files[0]) }}
         />
+        <button
+          className={`btn-icon${locked ? ' btn-icon--locked' : ''}`}
+          onClick={onToggleLock}
+          title={locked ? 'Desbloquear ficha' : 'Bloquear ficha (modo sessão)'}
+        >
+          {locked ? '🔒' : '🔓'}
+        </button>
         <button className="btn-icon" onClick={() => fileRef.current.click()} title="Importar JSON">
           📂
         </button>

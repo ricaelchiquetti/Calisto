@@ -40,13 +40,13 @@ function AddCaract({ onAdd, onClose }) {
   )
 }
 
-export default function Caracteristicas({ caracteristicas, onChange, onAdd, onRemove }) {
+export default function Caracteristicas({ caracteristicas, onChange, onAdd, onRemove, locked }) {
   const [showAdd, setShowAdd] = useState(false)
 
   const ativas = caracteristicas.filter(c => c.ativo)
   const custoTotal = ativas.reduce((s, c) => s + c.custo, 0)
 
-  const toggle = (index) => onChange(index, 'ativo', !caracteristicas[index].ativo)
+  const toggle = (index) => { if (!locked) onChange(index, 'ativo', !caracteristicas[index].ativo) }
 
   return (
     <>
@@ -59,7 +59,7 @@ export default function Caracteristicas({ caracteristicas, onChange, onAdd, onRe
         {caracteristicas.map((c, i) => (
           <div
             key={c.id}
-            className="caract-card"
+            className={`caract-card${locked ? ' caract-card--locked' : ''}`}
             onClick={() => toggle(i)}
           >
             <div className={`caract-checkbox${c.ativo ? ' caract-checkbox--ativo' : ''}`}>
@@ -74,7 +74,8 @@ export default function Caracteristicas({ caracteristicas, onChange, onAdd, onRe
                   className="caract-detalhe-input"
                   value={c.detalhe || ''}
                   onClick={e => e.stopPropagation()}
-                  onChange={e => onChange(i, 'detalhe', e.target.value)}
+                  onChange={e => { if (!locked) onChange(i, 'detalhe', e.target.value) }}
+                  readOnly={locked}
                   placeholder="Quais 3 perícias recebem +1?"
                 />
               )}
@@ -82,7 +83,7 @@ export default function Caracteristicas({ caracteristicas, onChange, onAdd, onRe
 
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 4, flexShrink: 0 }}>
               <span className="caract-custo">{c.custo}pt</span>
-              {c.custom && (
+              {c.custom && !locked && (
                 <button
                   style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', fontSize: 11 }}
                   onClick={e => { e.stopPropagation(); onRemove(i) }}
@@ -92,7 +93,7 @@ export default function Caracteristicas({ caracteristicas, onChange, onAdd, onRe
           </div>
         ))}
 
-        <button className="btn-add" onClick={() => setShowAdd(true)}>+ Nova</button>
+        {!locked && <button className="btn-add" onClick={() => setShowAdd(true)}>+ Nova</button>}
 
         {custoTotal > 0 && (
           <div className="caract-total">

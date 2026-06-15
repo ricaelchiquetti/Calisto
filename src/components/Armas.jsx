@@ -85,7 +85,7 @@ function AddArma({ onAdd, onClose }) {
   )
 }
 
-export default function Armas({ armas, onAdd, onRemove }) {
+export default function Armas({ armas, onAdd, onRemove, locked }) {
   const [showAdd, setShowAdd] = useState(false)
 
   return (
@@ -102,7 +102,7 @@ export default function Armas({ armas, onAdd, onRemove }) {
               <div className="arma-header">
                 <div className="arma-nome">{a.nome}</div>
                 <span className="arma-tipo-badge">{a.tipo}</span>
-                <button className="arma-remove" onClick={() => onRemove(i)} title="Remover">✕</button>
+                {!locked && <button className="arma-remove" onClick={() => onRemove(i)} title="Remover">✕</button>}
               </div>
 
               <div className="arma-stats">
@@ -121,7 +121,7 @@ export default function Armas({ armas, onAdd, onRemove }) {
           ))}
         </div>
 
-        <button className="btn-add" onClick={() => setShowAdd(true)}>+ Adicionar arma</button>
+        {!locked && <button className="btn-add" onClick={() => setShowAdd(true)}>+ Adicionar arma</button>}
       </Section>
 
       {showAdd && <AddArma onAdd={onAdd} onClose={() => setShowAdd(false)} />}
