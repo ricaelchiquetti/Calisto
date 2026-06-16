@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Star, Check } from 'lucide-react'
 import Section from './Section.jsx'
 
 const NEEDS_DETAIL = ['Especialista']
@@ -52,7 +53,7 @@ export default function Caracteristicas({ caracteristicas, onChange, onAdd, onRe
     <>
       <Section
         title="Características"
-        icon="⭐"
+        icon={<Star size={13} />}
         badge={ativas.length ? `${ativas.length} ativa${ativas.length !== 1 ? 's' : ''}` : undefined}
         defaultOpen
       >
@@ -63,7 +64,7 @@ export default function Caracteristicas({ caracteristicas, onChange, onAdd, onRe
             onClick={() => toggle(i)}
           >
             <div className={`caract-checkbox${c.ativo ? ' caract-checkbox--ativo' : ''}`}>
-              {c.ativo && <span className="caract-checkbox-icon">✓</span>}
+              {c.ativo && <span className="caract-checkbox-icon"><Check size={11} /></span>}
             </div>
 
             <div className="caract-body">

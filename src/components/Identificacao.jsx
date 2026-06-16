@@ -1,8 +1,9 @@
+import { User } from 'lucide-react'
 import Section from './Section.jsx'
 
 export default function Identificacao({ data, onChange }) {
   return (
-    <Section title="Identificação" icon="🪪">
+    <Section title="Identificação" icon={<User size={13} />}>
       <div className="field-group">
         <label className="field-label">Nome</label>
         <input

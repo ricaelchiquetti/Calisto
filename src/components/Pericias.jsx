@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Target, Star, X, Plus } from 'lucide-react'
 import Section from './Section.jsx'
 import NumericField from './NumericField.jsx'
 
@@ -53,7 +54,7 @@ export default function Pericias({ pericias, disponiveis, limiteMax, onChange, o
     <>
       <Section
         title="Perícias"
-        icon="🎯"
+        icon={<Target size={13} />}
         badge={`${disponiveis} PTS livre${disponiveis !== 1 ? 's' : ''}`}
         badgeVariant={badgeVariant}
         defaultOpen
@@ -93,7 +94,7 @@ export default function Pericias({ pericias, disponiveis, limiteMax, onChange, o
                   title={p.especialidade ? 'Remover especialidade' : 'Marcar como especialidade'}
                   disabled={!p.especialidade && especialidades.length >= MAX_ESPECIALIDADES}
                 >
-                  {p.especialidade ? '★' : '☆'}
+                  {p.especialidade ? <Star size={13} fill="currentColor" /> : <Star size={13} />}
                 </button>
 
                 <div className="pericia-info">
@@ -131,14 +132,14 @@ export default function Pericias({ pericias, disponiveis, limiteMax, onChange, o
                 </span>
 
                 {p.custom && !locked && (
-                  <button className="pericia-remove" onClick={() => onRemove(i)} title="Remover">✕</button>
+                  <button className="pericia-remove" onClick={() => onRemove(i)} title="Remover"><X size={12} /></button>
                 )}
               </div>
             </div>
           )
         })}
 
-        {!locked && <button className="btn-add" onClick={() => setShowAdd(true)}>+ Nova perícia</button>}
+        {!locked && <button className="btn-add" onClick={() => setShowAdd(true)}><Plus size={13} /> Nova perícia</button>}
       </Section>
 
       {showAdd && <AddPericia onAdd={onAdd} onClose={() => setShowAdd(false)} />}

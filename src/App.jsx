@@ -23,10 +23,16 @@ function loadCharacter() {
 export default function App() {
   const [char, setChar] = useState(loadCharacter)
   const [locked, setLocked] = useState(false)
+  const [theme, setTheme] = useState(() => localStorage.getItem('twd-theme') || 'dark')
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(char))
   }, [char])
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('twd-theme', theme)
+  }, [theme])
 
   const set = (mutator) => setChar(prev => {
     const next = structuredClone(prev)
@@ -74,6 +80,8 @@ export default function App() {
         onExport={exportJSON}
         onImport={importJSON}
         onReset={resetChar}
+        theme={theme}
+        onToggleTheme={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}
       />
 
       {/* ── STATS BAR: Físico | Mente | Vida | Sorte ── */}

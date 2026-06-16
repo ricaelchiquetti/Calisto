@@ -1,8 +1,9 @@
+import { FileText } from 'lucide-react'
 import Section from './Section.jsx'
 
 export default function Notas({ value, onChange }) {
   return (
-    <Section title="Notas & Inventário" icon="📝" defaultOpen>
+    <Section title="Notas & Inventário" icon={<FileText size={13} />} defaultOpen>
       <textarea
         className="notas-area"
         value={value}

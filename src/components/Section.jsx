@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ChevronUp, ChevronDown } from 'lucide-react'
 
 export default function Section({ title, icon, badge, badgeVariant, children, defaultOpen = false }) {
   const [open, setOpen] = useState(defaultOpen)
@@ -13,7 +14,7 @@ export default function Section({ title, icon, badge, badgeVariant, children, de
             {badge}
           </span>
         )}
-        <span className="section__arrow">{open ? '▲' : '▼'}</span>
+        <span className="section__arrow">{open ? <ChevronUp size={12} /> : <ChevronDown size={12} />}</span>
       </button>
       {open && <div className="section__content">{children}</div>}
     </div>

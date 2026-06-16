@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Crosshair, X } from 'lucide-react'
 import Section from './Section.jsx'
 import { TIPOS_ARMA } from '../data/defaultCharacter.js'
 
@@ -90,7 +91,7 @@ export default function Armas({ armas, onAdd, onRemove, locked }) {
 
   return (
     <>
-      <Section title="Armas & Equipamentos" icon="🔫" badge={armas.length || undefined}>
+      <Section title="Armas & Equipamentos" icon={<Crosshair size={13} />} badge={armas.length || undefined}>
         <div className="arma-list">
           {armas.length === 0 && (
             <div style={{ color: 'var(--text-muted)', fontSize: 13, textAlign: 'center', padding: '12px 0' }}>
@@ -102,7 +103,7 @@ export default function Armas({ armas, onAdd, onRemove, locked }) {
               <div className="arma-header">
                 <div className="arma-nome">{a.nome}</div>
                 <span className="arma-tipo-badge">{a.tipo}</span>
-                {!locked && <button className="arma-remove" onClick={() => onRemove(i)} title="Remover">✕</button>}
+                {!locked && <button className="arma-remove" onClick={() => onRemove(i)} title="Remover"><X size={14} /></button>}
               </div>
 
               <div className="arma-stats">

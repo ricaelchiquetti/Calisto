@@ -1,3 +1,4 @@
+import { TrendingUp } from 'lucide-react'
 import Section from './Section.jsx'
 import NumericField from './NumericField.jsx'
 
@@ -12,7 +13,7 @@ export default function Experiencia({ experiencia, onChange }) {
   const disponivel = Math.max(0, experiencia.total - experiencia.gasto)
 
   return (
-    <Section title="Experiência" icon="📈" defaultOpen>
+    <Section title="Experiência" icon={<TrendingUp size={13} />} defaultOpen>
       <div className="xp-boxes">
         <div className="xp-box">
           <div className="xp-box__label">Total</div>
