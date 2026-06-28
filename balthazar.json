@@ -1,0 +1,67 @@
+{
+  "identificacao": {
+    "nome": "Balthazar \"Vovô\" Mendes",
+    "ocupacao": "Sargento/Instrutor de Ordem Unida e Tática Básica",
+    "descricao": "52 anos, postura impecavelmente ereta, farda de instrução militar levemente gasta. Expressão severa, voz potente e um apito de metal sempre pendurado no pescoço.",
+    "historico": "Passou as últimas décadas gritando com recrutas indisciplinados e transformando civis moles em soldados em uma escola militar. Estava na ilha turística quando tudo colapsou e os mortos começaram a andar. Usando seu pragmatismo militar e voz de comando, conseguiu coordenar um grupo pequeno e correr a tempo para o bunker do milionário, onde tenta manter a ordem e a disciplina como se o local fosse seu novo quartel-general."
+  },
+  "atributos": {
+    "fisico": 4,
+    "mente": 2
+  },
+  "recursos": {
+    "vida": { "atual": 14, "maximo": 14 },
+    "sorte": { "atual": 6, "maximo": 6 }
+  },
+  "pericias": [
+    { "id": 1,  "nome": "Acrobacia",      "descricao": "Equilibrar, saltar e fazer movimentos precisos com o corpo", "valor": 0, "bonus": 0, "especialidade": false, "custom": false, "grupo": "base" },
+    { "id": 2,  "nome": "Aparência",      "descricao": "Seduzir e causar boa impressão",                             "valor": 0, "bonus": 0, "especialidade": false, "custom": false, "grupo": "base" },
+    { "id": 3,  "nome": "Combate",        "descricao": "Ataques — escolha o tipo",                                   "valor": 3, "bonus": 0, "especialidade": true,  "custom": false, "grupo": "base", "nota": "Combate Físico / Corpo a Corpo" },
+    { "id": 4,  "nome": "Condução",       "descricao": "Conduzir montarias ou veículos",                             "valor": 0, "bonus": 0, "especialidade": false, "custom": false, "grupo": "base", "nota": "" },
+    { "id": 5,  "nome": "Conhecimento",   "descricao": "Saber tudo sobre uma área específica",                       "valor": 0, "bonus": 0, "especialidade": false, "custom": false, "grupo": "base", "nota": "" },
+    { "id": 6,  "nome": "Coragem",        "descricao": "Resistir ao medo",                                           "valor": 0, "bonus": 0, "especialidade": false, "custom": false, "grupo": "base" },
+    { "id": 7,  "nome": "Crime",          "descricao": "Abrir fechaduras, furtar bolsos, mover-se em silêncio",      "valor": 0, "bonus": 0, "especialidade": false, "custom": false, "grupo": "base" },
+    { "id": 8,  "nome": "Força",          "descricao": "Erguer coisas pesadas, quebrar coisas e derrubar portas",    "valor": 0, "bonus": 0, "especialidade": false, "custom": false, "grupo": "base" },
+    { "id": 9,  "nome": "Lábia",          "descricao": "Manipular e convencer outras pessoas",                       "valor": 0, "bonus": 0, "especialidade": false, "custom": false, "grupo": "base" },
+    { "id": 10, "nome": "Percepção",      "descricao": "Perceber detalhes, sons e cheiros",                          "valor": 1, "bonus": 0, "especialidade": false, "custom": false, "grupo": "base" },
+    { "id": 11, "nome": "Vigor",          "descricao": "Resistir à fadiga, cansaço, fome e calor intenso",           "valor": 0, "bonus": 0, "especialidade": false, "custom": false, "grupo": "base" },
+    { "id": 13, "nome": "Mira",           "descricao": "Ataques de combate a distância",                             "valor": 3, "bonus": 0, "especialidade": true,  "custom": false, "grupo": "c+" },
+    { "id": 15, "nome": "Computadores",   "descricao": "Manuseio de computadores e sistemas digitais",               "valor": 0, "bonus": 0, "especialidade": false, "custom": false, "grupo": "c+" },
+    { "id": 16, "nome": "Esportes",       "descricao": "Escalar, nadar, correr, resistência física",                 "valor": 0, "bonus": 0, "especialidade": false, "custom": false, "grupo": "c+" },
+    { "id": 17, "nome": "Furtividade",    "descricao": "Mover-se e agir silenciosamente",                            "valor": 0, "bonus": 0, "especialidade": false, "custom": false, "grupo": "c+", "nota": "" },
+    { "id": 18, "nome": "Persuasão",      "descricao": "Manipular, convencer, seduzir, negociar",                    "valor": 1, "bonus": 0, "especialidade": false, "custom": false, "grupo": "c+", "nota": "Comando Militar / Ordem Unida" },
+    { "id": 19, "nome": "Reparos",        "descricao": "Reparo de um grupo de dispositivos escolhidos",              "valor": 0, "bonus": 0, "especialidade": false, "custom": false, "grupo": "c+", "nota": "" },
+    { "id": 20, "nome": "Sobrevivência",  "descricao": "Conhecimento para sobreviver ao Apocalipse Zumbi",           "valor": 0, "bonus": 0, "especialidade": false, "custom": false, "grupo": "c+" }
+  ],
+  "caracteristicas": [
+    { "id": 1, "nome": "Especialista",        "custo": 2, "bonus": "+1 nas rolagens de 3 perícias escolhidas",           "ativo": false, "custom": false, "detalhe": "" },
+    { "id": 2, "nome": "Ambidestro",          "custo": 3, "bonus": "Pode usar as duas mãos para atacar ou realizar ações","ativo": false, "custom": false, "detalhe": "" },
+    { "id": 3, "nome": "Reflexo de Combate",  "custo": 4, "bonus": "Sempre começa primeiro no combate",                  "ativo": true,  "custom": false, "detalhe": "Iniciativa garantida automática." },
+    { "id": 4, "nome": "Determinação",        "custo": 4, "bonus": "+1 nas rolagens do atributo Mente ou Físico",        "ativo": false, "custom": false, "detalhe": "" },
+    { "id": 5, "nome": "Recuperação",         "custo": 4, "bonus": "Recupera 2 pontos de Vida e Sorte por hora de descanso", "ativo": false, "custom": false, "detalhe": "" },
+    { "id": 6, "nome": "Limite Sobre-humano", "custo": 4, "bonus": "Perícias podem ultrapassar o limite, indo até 8",    "ativo": false, "custom": false, "detalhe": "" }
+  ],
+  "armas": [
+    {
+      "id": 1001,
+      "nome": "Pistola de Instrução Velha",
+      "tipo": "Fogo Pequeno",
+      "bonusAtaque": 4,
+      "bonusDano": 2,
+      "notas": "Pistola padrão trazida do quartel. Pouca munição."
+    },
+    {
+      "id": 1002,
+      "nome": "Cassetete Metálico Tático",
+      "tipo": "Contusão",
+      "bonusAtaque": 2,
+      "bonusDano": 2,
+      "notas": "Excelente para quebrar crânios de zumbis sem fazer barulho."
+    }
+  ],
+  "experiencia": {
+    "total": 0,
+    "gasto": 0
+  },
+  "notas": "Especialidade: Combate + Mira (ligação direta: treinamento militar de combate armado e desarmado).\nReflexo de Combate — custo: 4 pts de perícia.\nPontos de perícia usados: 8 / 8 (12 iniciais - 4 do Reflexo de Combate).\n\nDistribuição de perícias (regra TWD C+):\n  Combate 3 + Mira 3 + Percepção 1 + Persuasão 1 = 8 pts.\n\nRegra Especial de Especialidade ativa para Combate e Mira: Rolagens que caírem o número 1 podem ser jogadas novamente."
+}
